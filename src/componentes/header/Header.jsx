@@ -1,10 +1,24 @@
-import React from "react";
 import Title from "../title/Title";
 import P from "../pe/P";
 import Button from "../buttons/Button";
 import S from "./Header.module.css";
 
 const Header = () => {
+  const buttons = [
+    {
+      text: "Conheça a Linx" 
+    },
+    {
+     text: "Ajude o Algoritimo"
+    },
+   {
+     text: "Seus produtos" 
+    },
+   {
+     text: "Compartilhe"
+    },
+  ]
+  
   return (
     <header className={S.header}>
       <div>
@@ -17,10 +31,7 @@ const Header = () => {
         />
       </div>
       <div className={S.groupbuttons}>
-        <Button style={S.button} text={"Conheça a Linx"} />
-        <Button style={S.button} text={"Ajude o Algoritimo"} />
-        <Button style={S.button} text={"Seus produtos"} />
-        <Button style={S.button} text={"Compartilhe"} />
+          {buttons.map(buttons => <Button style={S.button} text={buttons.text}/>)}
       </div>
     </header>
   );
