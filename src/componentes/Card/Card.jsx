@@ -1,18 +1,19 @@
 import React from 'react'
-
+import Button from '../buttons/Button'
+import S from './Card.module.css'
 const Card = ({keyId, img, productName, description, oldPrice, price, count, value}) => {
   return (
-    <div key={keyId}>
+    <div className={S.card} key={keyId}>
         <div>
             <img src={img} alt=""/>
         </div>
         <div>
-            <h3>{productName}</h3>
+            <h4>{productName}</h4>
             <p>{description}</p>
             <p>De: R$:{oldPrice}</p>
-            <p>Por: R${price}</p>
+            <p className={S.bold}>Por: R${price}</p>
             <p>ou {count}x de R${value}</p>
-            <button>Comprar</button>
+            <Button text ="Comprar" style={S.btn}/>
         </div>
     </div>
   )

@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react';
 import Card from '../Card/Card';
+import S from './Products.module.css'
+import Button from '../buttons/Button';
 
 
 const Poducts = () => {
@@ -17,7 +19,7 @@ const Poducts = () => {
     setNextPage(json.nextPage)
   }
 
-  const nextPage = ()=>{
+  const nextPage = (e)=>{
     setPage(nextPag)
   }
 
@@ -26,20 +28,21 @@ const Poducts = () => {
   }, [page]);
   
   return (
-    <div>
-        {cardInfo.map((item) => 
-        <Card 
-        productName={item.name}
-        img={item.image}
-        description={item.description}
-        oldPrice={item.oldPrice}
-        price={item.price}
-        count={item.installments.count}
-        value={item.installments.value}
-         />
-        )}
-
-        <button onClick={nextPage}>teste</button>
+    <div className={S.divProducts}>
+      <div className={S.products}>
+          {cardInfo.map((item) =>
+          <Card
+          productName={item.name}
+          img={item.image}
+          description={item.description}
+          oldPrice={item.oldPrice}
+          price={item.price}
+          count={item.installments.count}
+          value={item.installments.value}
+           />
+          )}
+      </div>
+      <Button func={nextPage} style={S.btn} text="Ainda mais produtos aqui!"/>
     </div>
   )
 }

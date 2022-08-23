@@ -3,3 +3,20 @@
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-family: "HelveticaRegular";
+  src: url(/Fonts/HelveticaNeueLight.ttf);
+}
+@font-face {
+  font-family: "HelveticaBold";
+  src: url(/Fonts/HelveticaNeueBold.ttf);
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: HelveticaRegular, sans-serif;
+  color: #888888;
+}
+body > h2 {
+  font-family: HelveticaBold, sans;
+}
