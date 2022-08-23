@@ -1,13 +1,14 @@
-import Break from "./componentes/break/Break";
-import Footer from "./componentes/footer/Footer";
-import Header from "./componentes/header/Header";
-import Section from "./componentes/section/Section";
-import Article from "./componentes/articles/Article";
 import S from "./App.module.css";
+import Article from "./componentes/articles/Article";
+import Card from "./componentes/Card/Card";
+import Footer from "./componentes/footer/Footer";
 import Form from "./componentes/form/Form";
+import Header from "./componentes/header/Header";
+import Poducts from "./componentes/Products/Poducts";
+import Section from "./componentes/section/Section";
+import Break from './componentes/break/Break'
 
 function App() {
-
   const inputLabel = [
     {
       text: "Seu nome:",
@@ -26,7 +27,7 @@ function App() {
       type: "text",
       key: 3,
       style: S.input,
-    }
+    },
   ];
   const inputRadio = [
     {
@@ -34,16 +35,16 @@ function App() {
       type: "radio",
       key: 4,
       style: S.inputRadio,
-      radioDivStyle: S.radioDivStyle
+      radioDivStyle: S.radioDivStyle,
     },
     {
       text: "Feminino",
       type: "radio",
       key: 5,
       style: S.inputRadio,
-      radioDivStyle: S.radioDivStyle
-    }
-  ]
+      radioDivStyle: S.radioDivStyle,
+    },
+  ];
   const buttonForm = [
     {
       style: S.buttonForm,
@@ -56,7 +57,7 @@ function App() {
       inputLabel={inputLabel}
       inputRadio={inputRadio}
       buttonForm={buttonForm}
-      radioDivStyle={ S.radioDivStyle}
+      radioDivStyle={S.radioDivStyle}
     />
   );
   const introText = [
@@ -82,7 +83,7 @@ function App() {
     {
       style: S.buttonFormNewsLetter,
       text: "Enviar",
-    }
+    },
   ];
   const formNewsLetter = (
     <Form
@@ -93,15 +94,16 @@ function App() {
       formInputStyle={S.formInputStyle}
     />
   );
-  
+
+
   return (
     <div>
       <Header />
       <Section style={S.section} compOne={article} compTwo={form} />
       <Break text={"Sua seleção especial"} />
-      {/*  */}
+      <Poducts/>
       <Break text={"Compartilhe a novidade"} />
-      <Section style={S.section}compOne={formNewsLetter} />
+      <Section style={S.section} compOne={formNewsLetter} />
       <Footer />
     </div>
   );

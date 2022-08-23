@@ -23,7 +23,7 @@ const Form = ({
           ? inputLabel.map((item) => (
               <div className={item.divStyle}>
                 <Label text={item.text} />
-                <Input style={item.style} type={item.type} key={item.key} />
+                <Input key={item.key} style={item.style} type={item.type}  />
               </div>
             ))
           : ""}

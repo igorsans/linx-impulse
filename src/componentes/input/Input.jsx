@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Input = ({style, type, key}) => {
+const Input = ({style, type}) => {
   return (
-        <input className={style} type={type} key={key} />
+        <input className={style} type={type} />
   )
 }
 

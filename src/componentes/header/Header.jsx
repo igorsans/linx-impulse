@@ -6,16 +6,20 @@ import S from "./Header.module.css";
 const Header = () => {
   const buttons = [
     {
-      text: "Conheça a Linx" 
+      text: "Conheça a Linx",
+      key: 1
     },
     {
-     text: "Ajude o Algoritimo"
+     text: "Ajude o Algoritimo",
+     key: 2
     },
    {
-     text: "Seus produtos" 
+     text: "Seus produtos" ,
+     key: 3
     },
    {
-     text: "Compartilhe"
+     text: "Compartilhe",
+     key: 4
     },
   ]
   
@@ -31,7 +35,7 @@ const Header = () => {
         />
       </div>
       <div className={S.groupbuttons}>
-          {buttons.map(buttons => <Button style={S.button} text={buttons.text}/>)}
+          {buttons.map(buttons => <Button style={S.button} text={buttons.text} key={buttons.key}/>)}
       </div>
     </header>
   );
