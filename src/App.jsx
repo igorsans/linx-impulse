@@ -1,6 +1,5 @@
 import S from "./App.module.css";
 import Article from "./componentes/articles/Article";
-import Card from "./componentes/Card/Card";
 import Footer from "./componentes/footer/Footer";
 import Form from "./componentes/form/Form";
 import Header from "./componentes/header/Header";

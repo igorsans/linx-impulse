@@ -18,7 +18,8 @@
 }
 .groupbuttons{
     padding: 50px;
-    width: 70%;
+    width: 50%;
+    margin: 0px 368.px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
