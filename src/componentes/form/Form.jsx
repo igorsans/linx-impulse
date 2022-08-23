@@ -1,61 +1,48 @@
 import React from "react";
+import Button from "../buttons/Button";
 import Input from "../input/Input";
 import Label from "../label/Label";
-import RadioInput from "../input/RadioInput";
-import Button from "../buttons/Button";
-import S from "./Form.module.css";
+import P from "../pe/P";
 
-const inputLabel = [
-  {
-    text: "Seu nome:",
-    type: "text",
-    key: 1,
-    style: S.input,
-  },
-  {
-    text: "E-mail:",
-    type: "text",
-    key: 2,
-    style: S.input,
-  },
-  {
-    text: "CPF:",
-    type: "text",
-    key: 3,
-    style: S.input,
-  },
-];
-const radioInput = [
-  {
-    text: "Masculino",
-    type: "radio",
-    key: 4,
-    style: "",
-  },
-  {
-    text: "Feminino",
-    type: "radio",
-    key: 5,
-    style: "",
-  },
-];
-
-const Form = () => {
+const Form = ({
+  introText,
+  inputLabel,
+  inputRadio,
+  buttonForm,
+  radioDivStyle,
+  formStyle,
+  formInputStyle,
+}) => {
   return (
-    <form>
-      {inputLabel.map((item) => (
-        <div>
-          <Label text={item.text} />
-          <Input style={item.style} type={item.type} key={item.key} />
-        </div>
-      ))}
-      {radioInput.map((item) => (
-        <div>
-          <Input type={item.type} />
-          <Label text={item.text} />
-        </div>
-      ))}
-      <Button style={S.buttonForm} text={"Enviar"} />
+    <form className={formStyle}>
+      <div>
+        {introText ? introText.map((item) => <P text={item.text} />) : ""}
+      </div>
+      <div className={formInputStyle}>
+        {inputLabel
+          ? inputLabel.map((item) => (
+              <div className={item.divStyle}>
+                <Label text={item.text} />
+                <Input style={item.style} type={item.type} key={item.key} />
+              </div>
+            ))
+          : ""}
+      </div>
+      <div className={radioDivStyle}>
+        {inputRadio
+          ? inputRadio.map((item) => (
+              <div className={item.radioDivStyle}>
+                <Input style={item.style} type={item.type} key={item.key} />
+                <Label text={item.text} />
+              </div>
+            ))
+          : ""}
+      </div>
+      {buttonForm
+        ? buttonForm.map((item) => (
+            <Button style={item.style} text={item.text} />
+          ))
+        : ""}
     </form>
   );
 };
